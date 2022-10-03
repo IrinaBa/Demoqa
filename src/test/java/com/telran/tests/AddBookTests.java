@@ -17,16 +17,13 @@ public class AddBookTests extends TestBase{
     public void ensurePrecondition() {
         new HomePage(driver).selectBookStoreApp();
         new BookStorePage(driver).clickOnLoginButton();
-//        new LoginPage(driver).clickOnLoginButton();
         new LoginPage(driver).login(UserData.USER_NAME, UserData.USER_PASSWORD);
         new ProfilePage(driver).verifyUsername(UserData.USER_NAME);
-
-
 
     }
 
     @Test
-    public void searchBookForLoginUserPositiveTest() {
+    public void searchBookForLoginPositiveTest() {
         new BookStorePage(driver).typeInSearchBookInput(BookData.BOOK_NAME);
         Assert.assertTrue(new BookStorePage(driver).takeNameOfBook().contains(BookData.BOOK_NAME));
     }
