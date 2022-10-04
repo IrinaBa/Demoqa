@@ -15,6 +15,11 @@ public class HomePage extends BasePage {
         clickWithAction(bookStoreAppTitle);
         return  new BookStorePage(driver);
     }
+@FindBy(xpath = "//*[@class='category-cards']/*[3]")
+WebElement alertsFrameWindows;
 
-
+    public SidePanelPage selectAlertsFrameWindows() {
+        clickWithJSExecutor(alertsFrameWindows, 0, 300);
+        return  new SidePanelPage(driver);
+    }
 }

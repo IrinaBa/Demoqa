@@ -8,6 +8,7 @@ public class BookStorePage extends BasePage {
     public BookStorePage(WebDriver driver) {
         super(driver);
     }
+
     @FindBy(id = "login")
     WebElement loginButton;
 
@@ -20,8 +21,8 @@ public class BookStorePage extends BasePage {
     WebElement searchInput;
 
     public BookStorePage typeInSearchBookInput(String bookName) {
-        type (searchInput, bookName);
-        return  this;
+        type(searchInput, bookName);
+        return this;
     }
 
     @FindBy(css = ".mr-2")
@@ -30,4 +31,20 @@ public class BookStorePage extends BasePage {
     public String takeNameOfBook() {
         return nameOfBook.getText();
     }
+
+    public BookStorePage clickOnBookTitleLink() {
+        click(nameOfBook);
+        return this;
+    }
+
+    @FindBy(css = ".text-right.fullButton")
+    WebElement addToCollectionButton;
+
+    public BookStorePage clickOnAddBookButton() {
+        clickWithJSExecutor(addToCollectionButton, 0, 300);
+        pause(500);
+        return this;
+    }
+
+
 }
