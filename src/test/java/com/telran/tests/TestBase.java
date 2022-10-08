@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBase {
 
-    WebDriver driver;
+   public WebDriver driver;
 
     @BeforeMethod
     public void init() {
