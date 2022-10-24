@@ -37,4 +37,16 @@ WebElement alertsFrameWindows;
         clickWithJSExecutor(widgets,0,300);
         return new SidePanelPage(driver);
     }
+    @FindBy(xpath = "//*[@class='category-cards']/*[2]")
+    WebElement forms;
+    public SidePanelPage selectForms() {
+        clickWithJSExecutor(forms,0,300);
+        return new SidePanelPage(driver);
+    }
+@FindBy(xpath = "//*[.='Interactions']")
+WebElement interactions;
+    public SidePanelPage selectInterActions() {
+        clickWithJSExecutor(interactions,0,300);
+        return new SidePanelPage(driver);
+    }
 }
